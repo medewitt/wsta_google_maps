@@ -9,6 +9,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+library(data.tree)
 ```
 # wsta_google_maps
 
@@ -33,4 +34,22 @@ The purpose of this repository is to house the final and supporting documents fo
 ## Shape File Creator
 
 [https://www.gmap-pedometer.com/](https://www.gmap-pedometer.com/)
+
+
+# Repository Structure
+
+```{r echo=FALSE}
+acme <- Node$new("WSTA Transit")
+  accounting <- acme$AddChild("routes")
+  routes_more <- accounting$AddChild("Route GPX files")
+  research <- acme$AddChild("references")
+    newProductLine <- research$AddChild("Google Provided Examples")
+  it <- acme$AddChild("src")
+    outsource <- it$AddChild("Scripts to Generate Files")
+  out <- acme$AddChild("out")
+  final <- out$AddChild("Final Format Files")
+    
+    print(acme)
+
+```
 

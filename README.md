@@ -33,3 +33,16 @@ validator](https://github.com/google/transitfeed/wiki/FeedValidator)
 ## Shape File Creator
 
 <https://www.gmap-pedometer.com/>
+
+# Repository Structure
+
+    #>                           levelName
+    #> 1 WSTA Transit                     
+    #> 2  ¦--routes                       
+    #> 3  ¦   °--Route GPX files          
+    #> 4  ¦--references                   
+    #> 5  ¦   °--Google Provided Examples 
+    #> 6  ¦--src                          
+    #> 7  ¦   °--Scripts to Generate Files
+    #> 8  °--out                          
+    #> 9      °--Final Format Files
