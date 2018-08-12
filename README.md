@@ -49,4 +49,9 @@ System](http://www.gocarta.org/alt-flash/insidecarta.php#developers)
     #> 7   ¦--src                           
     #> 8   ¦   °--Scripts to Generate Files 
     #> 9   °--out                           
-    #> 10      °--Final Format Files
+    #> 10      ¦--agency.txt                
+    #> 11      ¦--stops.txt                 
+    #> 12      ¦--routes.txt                
+    #> 13      ¦--trips.txt                 
+    #> 14      ¦--stop_times.txt            
+    #> 15      °--calendar.txt

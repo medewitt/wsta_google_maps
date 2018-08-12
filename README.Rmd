@@ -50,7 +50,12 @@ acme <- Node$new("WSTA Transit")
   it <- acme$AddChild("src")
     outsource <- it$AddChild("Scripts to Generate Files")
   out <- acme$AddChild("out")
-  final <- out$AddChild("Final Format Files")
+  agency <- out$AddChild("agency.txt")
+  stops <- out$AddChild("stops.txt")
+  routes <- out$AddChild("routes.txt")
+  trips <- out$AddChild("trips.txt")
+  stop_times <- out$AddChild("stop_times.txt")
+  calendar <- out$AddChild("calendar.txt")
     
     print(acme)
 
