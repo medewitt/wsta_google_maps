@@ -56,6 +56,7 @@ acme <- Node$new("WSTA Transit")
   trips <- out$AddChild("trips.txt")
   stop_times <- out$AddChild("stop_times.txt")
   calendar <- out$AddChild("calendar.txt")
+  shapes <- out$AddChild("shapes.txt")
     
     print(acme)
 

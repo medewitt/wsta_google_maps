@@ -54,4 +54,5 @@ System](http://www.gocarta.org/alt-flash/insidecarta.php#developers)
     #> 12      ¦--routes.txt                
     #> 13      ¦--trips.txt                 
     #> 14      ¦--stop_times.txt            
-    #> 15      °--calendar.txt
+    #> 15      ¦--calendar.txt              
+    #> 16      °--shapes.txt
