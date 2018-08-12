@@ -1,0 +1,7 @@
+route_id,service_id,trip_id,trip_headsign,trip_short_name,direction_id,block_id,shape_id,wheelchair_accessible,bikes_allowed
+109,WD,109WD,NA,NA,NA,NA,NA,NA,NA
+109,SAT,109SAT,NA,NA,NA,NA,NA,NA,NA
+109,SUN,109SUN,NA,NA,NA,NA,NA,NA,NA
+87,WD,87WD,NA,NA,NA,NA,NA,NA,NA
+87,SAT,87SAT,NA,NA,NA,NA,NA,NA,NA
+87,SUN,87SUN,NA,NA,NA,NA,NA,NA,NA
