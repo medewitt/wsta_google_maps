@@ -1,4 +1,5 @@
 # Generate Keys Files
+library(tidyverse)
 
 # stop_times ----
 
@@ -14,8 +15,11 @@ stop_times <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTh7EfRp
                          drop_off_type = col_character(),
                          shape_dist_traveled = col_character(),
                          timepoint = col_character()
-                       ))
-write_csv(stop_times, "stop_times.txt")
+                       )) %>% 
+  mutate(departure_time = arrival_time)
+
+
+write_csv(stop_times, "out/stop_times.txt", na = '')
 
 # Routes ----
 
@@ -32,30 +36,30 @@ routes <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTh7EfRpX0Cb
                      route_text_color = col_character()
                    ))
 
-write_csv(routes, "out/routes.txt")
+write_csv(routes, "out/routes.txt", na = '')
 
 # Trips ----
 
 trips <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTh7EfRpX0CbpnTrLB7ItujwRaaGS7GpiH7F-0pn6nZT62rtqortBZpCpdyIGelJMQKlYS99GyNr4H9/pub?gid=588662503&single=true&output=csv")
 
-write_csv( trips, "out/trips.txt")
+write_csv( trips, "out/trips.txt", na = '')
 
 # Calendar ---
 
 calendar <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTh7EfRpX0CbpnTrLB7ItujwRaaGS7GpiH7F-0pn6nZT62rtqortBZpCpdyIGelJMQKlYS99GyNr4H9/pub?gid=2012348353&single=true&output=csv")
 
-write_csv(calendar, "out/calendar.txt")
+write_csv(calendar, "out/calendar.txt", na = '')
 
 # Fare Attributes ----
 
 fare_attributes <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTh7EfRpX0CbpnTrLB7ItujwRaaGS7GpiH7F-0pn6nZT62rtqortBZpCpdyIGelJMQKlYS99GyNr4H9/pub?gid=1541523136&single=true&output=csv")
 
-write_csv( fare_attributes, "out/fare_attributes.txt")
+write_csv( fare_attributes, "out/fare_attributes.txt", na = '')
 
 # Stops ----
 
 stops <- read_csv("master_list.csv")
 
-write_csv(stops, "out/stops.txt")
+write_csv(stops, "out/stops.txt", na = '')
 
   

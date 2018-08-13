@@ -37,7 +37,7 @@ for( i in seq_along(files)){
 shapes <- bind_rows(gpx) %>% 
   select(shape_id, shape_pt_lat, shape_pt_lon, shape_pt_sequence, shape_dist_traveled)
 
-write_csv(shapes, "out/shapes.txt")
+write_csv(shapes, "out/shapes.txt", na = '')
 
   
 
