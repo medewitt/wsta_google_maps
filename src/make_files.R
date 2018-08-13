@@ -1,5 +1,15 @@
 # Generate Keys Files
 library(tidyverse)
+library(glue)
+
+
+time_formatter<-function(x){
+  if(str_count(x)>1){
+    x
+  }else{
+    paste0("0",x)
+  }
+}
 
 # stop_times ----
 
@@ -16,7 +26,16 @@ stop_times <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTh7EfRp
                          shape_dist_traveled = col_character(),
                          timepoint = col_character()
                        )) %>% 
-  mutate(departure_time = arrival_time)
+  mutate(my_hour = lubridate::hour(arrival_time),
+         my_min = lubridate::minute(arrival_time),
+         my_second = lubridate::second(arrival_time)) %>%
+  mutate(my_hour = ifelse(str_count(my_hour)<2, paste0("0",my_hour), my_hour),
+         my_min = ifelse(str_count(my_min)<2, paste0("0",my_min), my_min),
+         my_second = ifelse(str_count(my_second)<2, paste0("0",my_second), my_second)) %>% 
+  mutate(arrival_time =ifelse(my_hour == "00",glue("24:{my_min}:{my_second}"),
+                              glue("{my_hour}:{my_min}:{my_second}"))) %>% 
+  mutate(departure_time = arrival_time) %>% 
+  select(-my_hour, -my_min, -my_second)
 
 
 write_csv(stop_times, "out/stop_times.txt", na = '')
