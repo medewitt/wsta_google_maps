@@ -1,0 +1,4 @@
+service_id,date,exception_type
+WD,20171225,2
+SAT,20171225,2
+SUN,20171225,2

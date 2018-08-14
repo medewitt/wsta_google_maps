@@ -63,21 +63,29 @@ trips <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTh7EfRpX0Cbp
 
 write_csv( trips, "out/trips.txt", na = '')
 
-# Calendar ---
+# Calendar ----
 
 calendar <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTh7EfRpX0CbpnTrLB7ItujwRaaGS7GpiH7F-0pn6nZT62rtqortBZpCpdyIGelJMQKlYS99GyNr4H9/pub?gid=2012348353&single=true&output=csv")
 
 write_csv(calendar, "out/calendar.txt", na = '')
 
+## Calendar Exceptions ----
+
+calendar_dates <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTh7EfRpX0CbpnTrLB7ItujwRaaGS7GpiH7F-0pn6nZT62rtqortBZpCpdyIGelJMQKlYS99GyNr4H9/pub?gid=2068648838&single=true&output=csv")
+
+write_csv(calendar_dates, "out/calendar_dates.txt", na = '')
+
 # Fare Attributes ----
 
-fare_attributes <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTh7EfRpX0CbpnTrLB7ItujwRaaGS7GpiH7F-0pn6nZT62rtqortBZpCpdyIGelJMQKlYS99GyNr4H9/pub?gid=1541523136&single=true&output=csv")
+fare_attributes <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTh7EfRpX0CbpnTrLB7ItujwRaaGS7GpiH7F-0pn6nZT62rtqortBZpCpdyIGelJMQKlYS99GyNr4H9/pub?gid=1541523136&single=true&output=csv") %>% 
+  select(-agency_id)
 
 write_csv( fare_attributes, "out/fare_attributes.txt", na = '')
 
 # Stops ----
 
-stops <- read_csv("master_list.csv")
+stops <- read_csv("master_list.csv") %>% 
+  select(-stop_address)
 
 write_csv(stops, "out/stops.txt", na = '')
 
